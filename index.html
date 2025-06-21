@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alazel - Your World, Delivered | Kenya's Universal Marketplace</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+--primary: #2a6d38; /* Deep green - represents growth & agriculture */
+--secondary: #f39c12; /* Gold - represents African sun & prosperity */
+--accent: #2980b9; /* Blue - represents trust & technology */
+--light: #f9f9f9;
+--dark: #333;
+--shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background-color: #f5f7fa;
+color: var(--dark);
+line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+background-color: white;
+box-shadow: var(--shadow);
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+.top-bar {
+background-color: var(--primary);
+color: white;
+padding: 8px 0;
+font-size: 0.9rem;
+}
+
+.container {
+width: 90%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 15px;
+}
+
+.flex {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo-section {
+padding: 15px 0;
+}
+
+.logo {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.logo h1 {
+color: var(--primary);
+font-size: 1.8rem;
+font-weight: 700;
+}
+
+.logo span {
+color: var(--secondary);
+}
+
+.search-bar {
+flex-grow: 1;
+max-width: 600px;
+margin: 0 20px;
+position: relative;
+}
+
+.search-bar input {
+width: 100%;
+padding: 12px 20px;
+border: 2px solid #ddd;
+border-radius: 30px;
+font-size: 1rem;
+transition: all 0.3s;
+}
+
+.search-bar input:focus {
+border-color: var(--accent);
+outline: none;
+}
+
+.search-bar button {
+position: absolute;
+right: 5px;
+top: 5px;
+background: var(--secondary);
+color: white;
+border: none;
+border-radius: 30px;
+padding: 7px 20px;
+cursor: pointer;
+}
+
+.nav-icons {
+display: flex;
+gap: 20px;
+}
+
+.nav-icons a {
+color: var(--dark);
+text-decoration: none;
+display: flex;
+flex-direction: column;
+align-items: center;
+font-size: 0.85rem;
+}
+
+.nav-icons i {
+font-size: 1.4rem;
+margin-bottom: 5px;
+}
+
+.cart-icon {
+position: relative;
+}
+
+.cart-count {
+position: absolute;
+top: -5px;
+right: -5px;
+background: var(--secondary);
+color: white;
+border-radius: 50%;
+width: 20px;
+height: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.7rem;
+}
+
+/* Main Navigation */
+nav {
+background-color: var(--primary);
+padding: 12px 0;
+}
+
+.main-nav {
+display: flex;
+list-style: none;
+gap: 25px;
+}
+
+.main-nav a {
+color: white;
+text-decoration: none;
+font-weight: 500;
+font-size: 1rem;
+transition: all 0.3s;
+}
+
+.main-nav a:hover {
+color: var(--secondary);
+}
+
+/* Hero Section */
+.hero {
+background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+background-size: cover;
+background-position: center;
+color: white;
+padding: 80px 0;
+text-align: center;
+}
+
+.hero h2 {
+font-size: 2.8rem;
+margin-bottom: 20px;
+text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+font-size: 1.2rem;
+max-width: 700px;
+margin: 0 auto 30px;
+text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.btn {
+display: inline-block;
+background: var(--secondary);
+color: white;
+padding: 12px 30px;
+border-radius: 30px;
+text-decoration: none;
+font-weight: 600;
+font-size: 1.1rem;
+transition: all 0.3s;
+border: 2px solid var(--secondary);
+}
+
+.btn:hover {
+background: transparent;
+color: var(--secondary);
+transform: translateY(-3px);
+}
+
+.btn-outline {
+background: transparent;
+border: 2px solid white;
+margin-left: 15px;
+}
+
+.btn-outline:hover {
+background: white;
+color: var(--primary);
+}
+
+/* Categories Section */
+.section-title {
+text-align: center;
+margin: 50px 0 30px;
+position: relative;
+}
+
+.section-title h2 {
+font-size: 2.2rem;
+color: var(--primary);
+display: inline-block;
+background: white;
+padding: 0 20px;
+position: relative;
+z-index: 1;
+}
+
+.section-title::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 0;
+right: 0;
+height: 2px;
+background: var(--primary);
+z-index: 0;
+}
+
+.categories {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+gap: 25px;
+margin-bottom: 50px;
+}
+
+.category-card {
+background: white;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: var(--shadow);
+transition: all 0.3s;
+text-align: center;
+}
+
+.category-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.category-icon {
+background: var(--light);
+padding: 25px 0;
+font-size: 3rem;
+color: var(--primary);
+}
+
+.category-card h3 {
+padding: 15px 10px;
+color: var(--dark);
+}
+
+/* Featured Products */
+.products {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 25px;
+margin-bottom: 50px;
+}
+
+.product-card {
+background: white;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: var(--shadow);
+transition: all 0.3s;
+}
+
+.product-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.product-img {
+height: 200px;
+background-color: #f9f9f9;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #ddd;
+font-size: 3rem;
+}
+
+.product-info {
+padding: 20px;
+}
+
+.product-info h3 {
+margin-bottom: 10px;
+color: var(--dark);
+}
+
+.price {
+font-size: 1.4rem;
+font-weight: 700;
+color: var(--primary);
+margin-bottom: 15px;
+}
+
+.rating {
+color: var(--secondary);
+margin-bottom: 15px;
+}
+
+.add-to-cart {
+display: block;
+width: 100%;
+background: var(--accent);
+color: white;
+border: none;
+padding: 10px;
+border-radius: 5px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.add-to-cart:hover {
+background: var(--primary);
+}
+
+/* Why Choose Section */
+.why-choose {
+background: white;
+padding: 60px 0;
+margin: 50px 0;
+}
+
+.features {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 30px;
+margin-top: 40px;
+}
+
+.feature-card {
+text-align: center;
+padding: 30px 20px;
+border-radius: 10px;
+transition: all 0.3s;
+}
+
+.feature-card:hover {
+background: var(--light);
+transform: translateY(-5px);
+}
+
+.feature-icon {
+font-size: 3rem;
+color: var(--primary);
+margin-bottom: 20px;
+}
+
+.feature-card h3 {
+margin-bottom: 15px;
+color: var(--primary);
+}
+
+/* Seller Section */
+.seller-section {
+background: linear-gradient(to right, var(--primary), var(--accent));
+color: white;
+padding: 80px 0;
+text-align: center;
+margin: 50px 0;
+}
+
+.seller-section h2 {
+font-size: 2.5rem;
+margin-bottom: 20px;
+}
+
+.seller-section p {
+max-width: 700px;
+margin: 0 auto 30px;
+font-size: 1.1rem;
+}
+
+/* App Section */
+.app-section {
+display: flex;
+align-items: center;
+gap: 50px;
+margin: 80px 0;
+}
+
+.app-content {
+flex: 1;
+}
+
+.app-image {
+flex: 1;
+text-align: center;
+font-size: 10rem;
+color: var(--primary);
+}
+
+.app-buttons {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+}
+
+.app-btn {
+display: flex;
+align-items: center;
+gap: 10px;
+background: var(--dark);
+color: white;
+padding: 15px 25px;
+border-radius: 10px;
+text-decoration: none;
+font-weight: 600;
+}
+
+.app-btn i {
+font-size: 1.8rem;
+}
+
+.app-btn.apple {
+background: #000;
+}
+
+.app-btn.android {
+background: var(--primary);
+}
+
+/* Footer */
+footer {
+background: var(--dark);
+color: white;
+padding: 60px 0 20px;
+}
+
+.footer-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 40px;
+margin-bottom: 40px;
+}
+
+.footer-column h3 {
+color: var(--secondary);
+margin-bottom: 20px;
+font-size: 1.3rem;
+}
+
+.footer-links {
+list-style: none;
+}
+
+.footer-links li {
+margin-bottom: 12px;
+}
+
+.footer-links a {
+color: #ddd;
+text-decoration: none;
+transition: all 0.3s;
+}
+
+.footer-links a:hover {
+color: var(--secondary);
+padding-left: 5px;
+}
+
+.contact-info {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.contact-item {
+display: flex;
+gap: 10px;
+align-items: flex-start;
+}
+
+.social-links {
+display: flex;
+gap: 15px;
+margin-top: 20px;
+}
+
+.social-links a {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+background: #444;
+color: white;
+border-radius: 50%;
+font-size: 1.2rem;
+transition: all 0.3s;
+}
+
+.social-links a:hover {
+background: var(--secondary);
+transform: translateY(-5px);
+}
+
+.copyright {
+text-align: center;
+padding-top: 30px;
+border-top: 1px solid #444;
+color: #aaa;
+font-size: 0.9rem;
+}
+
+.payment-methods {
+display: flex;
+gap: 10px;
+margin-top: 20px;
+flex-wrap: wrap;
+}
+
+.payment-methods span {
+background: #444;
+padding: 5px 15px;
+border-radius: 5px;
+font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+.app-section {
+flex-direction: column;
+}
+
+.app-buttons {
+justify-content: center;
+}
+}
+
+@media (max-width: 768px) {
+.top-bar {
+display: none;
+}
+
+.logo-section .flex {
+flex-direction: column;
+gap: 15px;
+}
+
+.search-bar {
+margin: 10px 0;
+width: 100%;
+}
+
+.main-nav {
+overflow-x: auto;
+padding-bottom: 10px;
+}
+
+.hero h2 {
+font-size: 2.2rem;
+}
+
+.app-buttons {
+flex-direction: column;
+}
+}
+</style>
+</head>
+<body>
+<!-- Top Bar -->
+<div class="top-bar">
+<div class="container flex">
+<div>Free Delivery in Nairobi | Same Day Delivery Available</div>
+<div>Call Us: +254 700 000 000</div>
+</div>
+</div>
+
+<!-- Header -->
+<header>
+<div class="container">
+<div class="logo-section flex">
+<div class="logo">
+<i class="fas fa-globe-africa fa-2x" style="color: var(--primary);"></i>
+<h1>Ala<span>zel</span></h1>
+</div>
+
+<div class="search-bar">
+<input type="text" placeholder="Search for products, brands, and categories...">
+<button><i class="fas fa-search"></i> Search</button>
+</div>
+
+<div class="nav-icons">
+<a href="#">
+<i class="fas fa-user"></i>
+<span>Account</span>
+</a>
+<a href="#">
+<i class="fas fa-heart"></i>
+<span>Wishlist</span>
+</a>
+<a href="#" class="cart-icon">
+<i class="fas fa-shopping-cart"></i>
+<span>Cart</span>
+<span class="cart-count">3</span>
+</a>
+</div>
+</div>
+</div>
+
+<nav>
+<div class="container">
+<ul class="main-nav flex">
+<li><a href="#"><i class="fas fa-bars"></i> All Categories</a></li>
+<li><a href="#">Home</a></li>
+<li><a href="#">Electronics</a></li>
+<li><a href="#">Fashion</a></li>
+<li><a href="#">Home & Kitchen</a></li>
+<li><a href="#">Groceries</a></li>
+<li><a href="#">JuaKali Crafts</a></li>
+<li><a href="#">Farm Produce</a></li>
+<li><a href="#">M-Pesa Top-ups</a></li>
+<li><a href="#">Deals</a></li>
+</ul>
+</div>
+</nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+<div class="container">
+<h2>Your World, Delivered.</h2>
+<p>Kenya's Universal Marketplace - From farm to factory, we deliver it all. Pay with M-Pesa, Airtel Money, or credit cards.</p>
+<a href="#" class="btn">Shop Now</a>
+<a href="#" class="btn btn-outline">Become a Seller</a>
+</div>
+</section>
+
+<!-- Categories Section -->
+<section class="container">
+<div class="section-title">
+<h2>Shop By Category</h2>
+</div>
+
+<div class="categories">
+<div class="category-card">
+<div class="category-icon">
+<i class="fas fa-mobile-alt"></i>
+</div>
+<h3>Phones & Tablets</h3>
+</div>
+
+<div class="category-card">
+<div class="category-icon">
+<i class="fas fa-tshirt"></i>
+</div>
+<h3>Fashion</h3>
+</div>
+
+<div class="category-card">
+<div class="category-icon">
+<i class="fas fa-home"></i>
+</div>
+<h3>Home & Kitchen</h3>
+</div>
+
+<div class="category-card">
+<div class="category-icon">
+<i class="fas fa-carrot"></i>
+</div>
+<h3>Groceries</h3>
+</div>
+
+<div class="category-card">
+<div class="category-icon">
+<i class="fas fa-laptop"></i>
+</div>
+<h3>Computers</h3>
+</div>
+
+<div class="category-card">
+<div class="category-icon">
+<i class="fas fa-tools"></i>
+</div>
+<h3>JuaKali Crafts</h3>
+</div>
+
+<div class="category-card">
+<div class="category-icon">
+<i class="fas fa-seedling"></i>
+</div>
+<h3>Farm Produce</h3>
+</div>
+
+<div class="category-card">
+<div class="category-icon">
+<i class="fas fa-sim-card"></i>
+</div>
+<h3>Mobile & Data</h3>
+</div>
+</div>
+</section>
+
+<!-- Featured Products -->
+<section class="container">
+<div class="section-title">
+<h2>Featured Products</h2>
+</div>
+
+<div class="products">
+<div class="product-card">
+<div class="product-img">
+<i class="fas fa-mobile-alt"></i>
+</div>
+<div class="product-info">
+<h3>Tecno Spark 10 Pro</h3>
+<div class="rating">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half-alt"></i>
+<span>(24)</span>
+</div>
+<div class="price">KSh 24,999</div>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+</div>
+
+<div class="product-card">
+<div class="product-img">
+<i class="fas fa-blender"></i>
+</div>
+<div class="product-info">
+<h3>Kitchen Blender 500W</h3>
+<div class="rating">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="far fa-star"></i>
+<span>(18)</span>
+</div>
+<div class="price">KSh 5,499</div>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+</div>
+
+<div class="product-card">
+<div class="product-img">
+<i class="fas fa-tshirt"></i>
+</div>
+<div class="product-info">
+<h3>Men's African Print Shirt</h3>
+<div class="rating">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<span>(42)</span>
+</div>
+<div class="price">KSh 1,799</div>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+</div>
+
+<div class="product-card">
+<div class="product-img">
+<i class="fas fa-basket-shopping"></i>
+</div>
+<div class="product-info">
+<h3>Fresh Avocados (1kg)</h3>
+<div class="rating">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half-alt"></i>
+<span>(36)</span>
+</div>
+<div class="price">KSh 250</div>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="why-choose">
+<div class="container">
+<div class="section-title">
+<h2>Why Choose Alazel?</h2>
+</div>
+
+<div class="features">
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-truck"></i>
+</div>
+<h3>Fast & Reliable Delivery</h3>
+<p>24-hour delivery in urban areas, 72-hour in rural regions with our SimuDelivery Network</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-mobile-alt"></i>
+</div>
+<h3>Pay with M-Pesa</h3>
+<p>Seamless mobile money payments with M-Pesa, Airtel Money, and more</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-shield-alt"></i>
+</div>
+<h3>100% Buyer Protection</h3>
+<p>Money-back guarantee if you're not satisfied with your purchase</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-headset"></i>
+</div>
+<h3>24/7 Customer Support</h3>
+<p>Dedicated support team available via phone, chat, and WhatsApp</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Seller Section -->
+<section class="seller-section">
+<div class="container">
+<h2>Sell on Alazel Marketplace</h2>
+<p>Reach millions of customers across East Africa. Whether you're a farmer, artisan, or established business, we provide the platform and tools to grow your sales.</p>
+<a href="#" class="btn">Become a Seller</a>
+</div>
+</section>
+
+<!-- App Section -->
+<section class="container">
+<div class="app-section">
+<div class="app-content">
+<h2>Shop Anywhere, Anytime</h2>
+<p>Download the Alazel app for the best shopping experience. Order via USSD/SMS without internet: Dial *483#</p>
+
+<div class="app-buttons">
+<a href="#" class="app-btn apple">
+<i class="fab fa-apple"></i>
+<div>
+<span>Download on the</span>
+<strong>App Store</strong>
+</div>
+</a>
+
+<a href="#" class="app-btn android">
+<i class="fab fa-google-play"></i>
+<div>
+<span>Get it on</span>
+<strong>Google Play</strong>
+</div>
+</a>
+</div>
+</div>
+
+<div class="app-image">
+<i class="fas fa-mobile-alt"></i>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-column">
+<h3>Customer Service</h3>
+<ul class="footer-links">
+<li><a href="#">Help Center</a></li>
+<li><a href="#">How to Buy</a></li>
+<li><a href="#">Returns & Refunds</a></li>
+<li><a href="#">Delivery Information</a></li>
+<li><a href="#">Contact Us</a></li>
+</ul>
+</div>
+
+<div class="footer-column">
+<h3>About Alazel</h3>
+<ul class="footer-links">
+<li><a href="#">About Us</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Blog</a></li>
+</ul>
+</div>
+
+<div class="footer-column">
+<h3>Become a Seller</h3>
+<ul class="footer-links">
+<li><a href="#">Seller Registration</a></li>
+<li><a href="#">Seller Center</a></li>
+<li><a href="#">Seller Fees</a></li>
+<li><a href="#">M-Tigopeshe Financing</a></li>
+<li><a href="#">Logistics Support</a></li>
+</ul>
+</div>
+
+<div class="footer-column">
+<h3>Contact Us</h3>
+<div class="contact-info">
+<div class="contact-item">
+<i class="fas fa-map-marker-alt"></i>
+<span>Alazel Limited, Westlands, Nairobi, Kenya</span>
+</div>
+
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<span>+254 700 000 000</span>
+</div>
+
+<div class="contact-item">
+<i class="fas fa-envelope"></i>
+<span>support@alazel.ke</span>
+</div>
+
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="payment-methods">
+<span>M-Pesa</span>
+<span>Airtel Money</span>
+<span>Visa</span>
+<span>Mastercard</span>
+<span>Pay on Delivery</span>
+</div>
+
+<div class="copyright">
+<p>&copy; 2025 Alazel Limited. All Rights Reserved. | Made in Kenya for East Africa</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Simple cart counter functionality
+document.addEventListener('DOMContentLoaded', function() {
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+const cartCount = document.querySelector('.cart-count');
+let count = 3;
+
+addToCartButtons.forEach(button => {
+button.addEventListener('click', function() {
+count++;
+cartCount.textContent = count;
+
+// Animation effect
+this.textContent = "Added!";
+this.style.backgroundColor = "#27ae60";
+
+setTimeout(() => {
+this.textContent = "Add to Cart";
+this.style.backgroundColor = "";
+}, 1500);
+});
+});
+});
+</script>
+</body>
+</html>
